@@ -14,3 +14,5 @@ Encadeamento de nó: [classe nó](https://github.com/thaisconto/Bootcamp-Java-De
 Pilhas: [classe nó](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/No.java), [métodos pilha](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Pilha.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
 
 Pilhas refatorado com nó embutido e utilizando generics: [classe nó](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/No.java), [métodos fila](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Fila.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+Lista encadeada: [classe nó](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/No.java), [método lista](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/ListaEncadeada.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java).
