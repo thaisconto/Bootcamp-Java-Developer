@@ -1,37 +1,29 @@
-package encadeamentoNo;
+package estrutura.dados.pilhas;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String args[]){
+        Pilha minhaPilha = new Pilha();
 
-        No no1 = new No("Conteúdo no1");
+        //empilhar os nós
+        minhaPilha.push(new No(1));
+        minhaPilha.push(new No(2));
+        minhaPilha.push(new No(3));
+        minhaPilha.push(new No(4));
+        minhaPilha.push(new No(5));
+        minhaPilha.push(new No(6));
 
-        No no2 = new No("Conteúdo no2");
-        no1.setProximoNo(no2);
+        System.out.println("Impimir minha pilha" + minhaPilha);
 
-        No no3 = new No("Conteúdo no3");
-        no2.setProximoNo(no3);
+        System.out.println("Método pop, remove " + minhaPilha.pop());
 
-        No no4 = new No("Conteúdo no4");
-        no3.setProximoNo(no4);
+        System.out.println("Minha nova pilha" + minhaPilha);
 
-        //no1->no2->no3->no4->null
+        System.out.println("Método push: acrescentar número 99 na pilha");
+        minhaPilha.push(new No(99));
+        System.out.println(minhaPilha);
 
-        System.out.println("Entender que imprimir Nó 2 ou Nó1.get proximo sairá o valor de Nó 2");
-        System.out.println(no1);
-        System.out.println(no1.getProximoNo());
-        System.out.println(no2);
-
-        System.out.println("-----------------");
-
-        System.out.println("imprimir todos os nós usando apenas o encadeamento a partir do nó 1");
-
-        System.out.println(no1);
-        System.out.println(no1.getProximoNo());
-        System.out.println(no1.getProximoNo().getProximoNo());
-        System.out.println(no1.getProximoNo().getProximoNo().getProximoNo());
-        System.out.println(no1.getProximoNo().getProximoNo().getProximoNo().getProximoNo());
-
-
+        System.out.println("Método top, mostra último elemento da pilha: " + minhaPilha.top());
+        System.out.println("---------------");
+        System.out.println("Método isEmpty, pilha está vazia? " + minhaPilha.isEmpty());
     }
-
 }

@@ -1,35 +1,36 @@
-package encadeamentoNo;
+package estrutura.dados.pilhas;
 
 public class No {
-    private String conteudo;
-    private No proximoNo;
+    private int dado;
+    private No refNo = null;
 
-    public No(String conteudo) {
-        this.proximoNo = null;
-        this.conteudo = conteudo;
+    public No() {
     }
 
-    public String getConteudo() {
-        return conteudo;
+    public No(int dado) {
+        this.dado = dado;
     }
 
-    public void setConteudo(String conteudo) {
-        this.conteudo = conteudo;
+    public int getDado() {
+        return dado;
     }
 
-    public No getProximoNo() {
-        return proximoNo;
+    public void setDado(int dado) {
+        this.dado = dado;
     }
 
-    public void setProximoNo(No proximoNo) {
-        this.proximoNo = proximoNo;
+    public No getRefNo() {
+        return refNo;
+    }
+
+    public void setRefNo(No refNo) {
+        this.refNo = refNo;
     }
 
     @Override
     public String toString() {
         return "No{" +
-                "conteudo='" + conteudo + '\'' +
+                "dado=" + dado +
                 '}';
     }
 }
-
