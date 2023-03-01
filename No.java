@@ -1,36 +1,48 @@
-package filaNoEmbutido;
+package listaEncadeada;
 
 public class No<T> {
-    private T object;
-    private No<T> refNo = null;
+    private T conteudo;
+    private No proximoNo = null;
 
-    public No() {
+    public No(T conteudo){
+        this.conteudo = conteudo;
     }
 
-    public No(T object) {
-        this.object = object;
+    public No(T conteudo, No proximoNo) {
+        this.conteudo = conteudo;
+        this.proximoNo = proximoNo;
     }
 
-    public Object getObject() {
-        return object;
+    public T getConteudo() {
+        return conteudo;
     }
 
-    public void setObject(T object) {
-        this.object = object;
+    public void setConteudo(T conteudo) {
+        this.conteudo = conteudo;
     }
 
-    public No getRefNo() {
-        return refNo;
+    public No getProximoNo() {
+        return proximoNo;
     }
 
-    public void setRefNo(No refNo) {
-        this.refNo = refNo;
+    public void setProximoNo(No proximoNo) {
+        this.proximoNo = proximoNo;
     }
 
     @Override
     public String toString() {
-        return "No{" +
-                "dado=" + object +
-                '}';
+        return "No{" + conteudo + '}';
+    }
+
+    //método toString personalizado
+    public String toStringEncadeado() {
+        String str = "No{" + conteudo + "}";
+
+        if(proximoNo != null){
+            str += "->" + proximoNo.toString();
+        }else{
+            str += "->null";
+        }
+        return str;
     }
 }
