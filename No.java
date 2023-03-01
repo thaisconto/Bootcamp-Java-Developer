@@ -1,22 +1,22 @@
-package estrutura.dados.pilhas;
+package filaNoEmbutido;
 
-public class No {
-    private int dado;
-    private No refNo = null;
+public class No<T> {
+    private T object;
+    private No<T> refNo = null;
 
     public No() {
     }
 
-    public No(int dado) {
-        this.dado = dado;
+    public No(T object) {
+        this.object = object;
     }
 
-    public int getDado() {
-        return dado;
+    public Object getObject() {
+        return object;
     }
 
-    public void setDado(int dado) {
-        this.dado = dado;
+    public void setObject(T object) {
+        this.object = object;
     }
 
     public No getRefNo() {
@@ -30,7 +30,7 @@ public class No {
     @Override
     public String toString() {
         return "No{" +
-                "dado=" + dado +
+                "dado=" + object +
                 '}';
     }
 }
