@@ -1,36 +1,45 @@
-package listaDuplamenteEncadeada;
+package listaCircular;
+
+import javax.xml.transform.sax.SAXSource;
 
 public class Main {
     public static void main(String args[]){
 
-        ListaDuplamenteEncadeada<String> minhaListaEncadeada = new ListaDuplamenteEncadeada<>();
+        ListaCircular<String> minhaListaCircular = new ListaCircular<>();
 
-        //adicionando valores a lista
-        minhaListaEncadeada.add("c1");
-        minhaListaEncadeada.add("c2");
-        minhaListaEncadeada.add("c3");
-        minhaListaEncadeada.add("c4");
-        minhaListaEncadeada.add("c5");
-        minhaListaEncadeada.add("c6");
-        minhaListaEncadeada.add("c7");
+        System.out.println("Adicionando um item a lista: ");
+        minhaListaCircular.add("c0");
+        System.out.println(minhaListaCircular);
 
-        System.out.println("Minha lista: " + minhaListaEncadeada);
+        System.out.println("--------------");
 
-        System.out.println("-----------");
+        System.out.println("Removendo o item da lista");
+        minhaListaCircular.remove(0);
+        System.out.println(minhaListaCircular);
 
-        System.out.println("Remover c4, índice 3");
-        minhaListaEncadeada.remove(3);
-        System.out.println(minhaListaEncadeada);
+        System.out.println("--------------");
 
-        System.out.println("-----------");
+        System.out.println("Nova lista: ");
+        minhaListaCircular.add("c1");
+        minhaListaCircular.add("c2");
+        minhaListaCircular.add("c3");
+        System.out.println(minhaListaCircular);
 
-        System.out.println("Adicionar 99 a posição 4 (índice 3)");
-        minhaListaEncadeada.add(3, "99");
-        System.out.println(minhaListaEncadeada);
+        System.out.println("--------------");
 
-        System.out.println("-----------");
+        System.out.println("Qual o conteúdo do índice 3?");
+        System.out.println(minhaListaCircular.get(3));
 
-        System.out.println("Tamanho da lista: " + minhaListaEncadeada.size());
+        System.out.println("--------------");
+
+        System.out.println("A lista está vazia? " + minhaListaCircular.isEmpty());
+
+        System.out.println("--------------");
+
+        System.out.println("Qual o tamanho da lista? " + minhaListaCircular.size());
+
+        System.out.println("--------------");
 
     }
+
 }
