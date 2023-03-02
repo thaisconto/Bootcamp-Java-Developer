@@ -2,6 +2,8 @@
 
 Nesse repositório irei postar todo meu aprendizado com o Bootcamp de Java Developer oferecido pelo Banco Pan através da plataforma da DIO.
 
+ <i> OBS: você perceberá que praticamente todos os códigos estão comentados parte a parte, isso é para meus próprio entendimento e estudo futuro. </i>
+
 ## Dominando IDEs Java
 
 Primeiro código utilizando a IDE Eclipse [construtor](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/construtor.java) e [teste](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/primeiroTeste.java)
