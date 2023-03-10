@@ -1,10 +1,9 @@
-package queue;
+package arrayList;
 import java.util.Objects;
-
 public class Carro {
     private String marca;
 
-    public Carro(String marca) {
+    public Carro(String marca){
         this.marca = marca;
     }
 
