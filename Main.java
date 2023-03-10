@@ -1,37 +1,36 @@
-package arrayList;
+package set;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String args[]){
+        Set<Carro> hashSetCarros = new HashSet<>();
 
-        List<Carro> listCarros = new ArrayList<>();
+        //hash set
+        hashSetCarros.add(new Carro("Ford"));
+        hashSetCarros.add(new Carro("Chevrolet"));
+        hashSetCarros.add(new Carro("Fiat"));
+        hashSetCarros.add(new Carro("Peugeot"));
+        hashSetCarros.add(new Carro("Zip"));
+        hashSetCarros.add(new Carro("Alfa Romeo"));
 
-        listCarros.add(new Carro("Ford"));
-        listCarros.add(new Carro("Chevrolet"));
-        listCarros.add(new Carro("Fiat"));
-        listCarros.add(new Carro("Peugeot"));
-
-        System.out.println("Minha lista: " + listCarros);
+        System.out.println("Meu set: " + hashSetCarros);
         System.out.println("------");
 
-        //método contains retorna true ou false
-        System.out.println("Lista contém carro Ford? " + listCarros.contains(new Carro("Ford")));
-        System.out.println("------");
+        //arvore set
+        Set<Carro> treeSetCarros = new TreeSet<>();
 
-        //método get: mostra o elemento da posição desejada
-        System.out.println("Qual o carro do índice 1? " + listCarros.get(1));
-        System.out.println("------");
+        treeSetCarros.add(new Carro("Ford"));
+        treeSetCarros.add(new Carro("Chevrolet"));
+        treeSetCarros.add(new Carro("Fiat"));
+        treeSetCarros.add(new Carro("Peugeot"));
+        treeSetCarros.add(new Carro("Zip"));
+        treeSetCarros.add(new Carro("Alfa Romeo"));
 
-        //método indexOf: mostra qual o elemento do índice desejado
-        System.out.println("Qual índice está o carro Fiat? " + listCarros.indexOf(new Carro("Fiat")));
-        System.out.println("------");
+        //mostra em ordem alfabetica (tamanho) devido ao método compareTo
+        System.out.println("Minha arvore set: " + treeSetCarros);
 
-        //método remove: remove o elemento do índice desejado
-        System.out.println("Remova carro do índice 2: " + listCarros.remove(2));
-        System.out.println("Nova lista: " + listCarros);
-        System.out.println("------");
     }
-
 }
