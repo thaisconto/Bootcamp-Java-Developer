@@ -1,5 +1,6 @@
-package stack;
+package queue;
 import java.util.Objects;
+
 public class Carro {
     private String marca;
 
