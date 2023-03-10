@@ -37,3 +37,6 @@ ArrayList: [classe carro](https://github.com/thaisconto/Bootcamp-Java-Developer/
 Set(HashSet): [classe carro(https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
 
 Map(HashMap): [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+##Desafios de código
+Valor do carro novo: [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
