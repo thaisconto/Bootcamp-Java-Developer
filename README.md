@@ -35,3 +35,5 @@ Queue(fila): [classe carro](https://github.com/thaisconto/Bootcamp-Java-Develope
 ArrayList: [classe carro](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
 
 Set(HashSet): [classe carro(https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+Map(HashMap): [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
