@@ -1,45 +1,31 @@
-package listaCircular;
+package arvoreBinaria;
 
-import javax.xml.transform.sax.SAXSource;
+import arvoreBinaria.model.Obj;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
 
-        ListaCircular<String> minhaListaCircular = new ListaCircular<>();
+        ArvoreBinaria<Obj> minhaArvore = new ArvoreBinaria<>();
 
-        System.out.println("Adicionando um item a lista: ");
-        minhaListaCircular.add("c0");
-        System.out.println(minhaListaCircular);
+        //criando a arvore usando metodo inserir
+        minhaArvore.inserir(new Obj(13));
+        minhaArvore.inserir(new Obj(10));
+        minhaArvore.inserir(new Obj(25));
+        minhaArvore.inserir(new Obj(2));
+        minhaArvore.inserir(new Obj(12));
+        minhaArvore.inserir(new Obj(20));
+        minhaArvore.inserir(new Obj(31));
+        minhaArvore.inserir(new Obj(29));
+        minhaArvore.inserir(new Obj(32));
+        minhaArvore.remover(new Obj(32));
 
-        System.out.println("--------------");
+        minhaArvore.exibirInOrdem();
 
-        System.out.println("Removendo o item da lista");
-        minhaListaCircular.remove(0);
-        System.out.println(minhaListaCircular);
+        minhaArvore.exibirPreOrdem();
 
-        System.out.println("--------------");
-
-        System.out.println("Nova lista: ");
-        minhaListaCircular.add("c1");
-        minhaListaCircular.add("c2");
-        minhaListaCircular.add("c3");
-        System.out.println(minhaListaCircular);
-
-        System.out.println("--------------");
-
-        System.out.println("Qual o conteúdo do índice 3?");
-        System.out.println(minhaListaCircular.get(3));
-
-        System.out.println("--------------");
-
-        System.out.println("A lista está vazia? " + minhaListaCircular.isEmpty());
-
-        System.out.println("--------------");
-
-        System.out.println("Qual o tamanho da lista? " + minhaListaCircular.size());
-
-        System.out.println("--------------");
+        minhaArvore.exibirPosOrdem();
 
     }
+
 
 }
