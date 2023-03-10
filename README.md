@@ -29,3 +29,5 @@ Arvore Binaria: [classe nó binario](https://github.com/thaisconto/Bootcamp-Java
 HashCod e Equals: [classe carro](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
 
 Stack(pilha): [classe carro](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+Queue(fila): [classe carro](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
