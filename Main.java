@@ -1,32 +1,29 @@
-package equalsHashCode;
+package stack;
+import java.util.Stack;
 
-import java.util.ArrayList;
-import java.util.List;
 public class Main {
-    public static void main(String[] args){
 
-        List<Carro> listaCarros = new ArrayList<>();
+    public static void main(String args[]){
 
-        listaCarros.add(new Carro("Ford"));
-        listaCarros.add(new Carro("Chevrolet"));
-        listaCarros.add(new Carro("Volkswagen"));
+        //criar lista pelo stack
+        Stack<Carro> stackCarros = new Stack<>();
 
-        System.out.println("minha lista: " + listaCarros);
-        System.out.println("--------");
+        //método push para adicinar itens a pilha
+        stackCarros.push(new Carro("Ford"));
+        stackCarros.push(new Carro("Chevrolet"));
+        stackCarros.push(new Carro("Fiat"));
 
-        System.out.println("Lista contem Ford: " + listaCarros.contains(new Carro("Ford")));
-        System.out.println("---------");
+        System.out.println("Minha pilha: " + stackCarros);
+        System.out.println("-------");
 
-        System.out.println("Lista contem Fiat: " + listaCarros.contains(new Carro("Fiat")));
-        System.out.println("---------");
+        System.out.println("Método pop, retira o último adicionado a pilha: " + stackCarros.pop());
+        System.out.println("Nova pilha: " + stackCarros);
+        System.out.println("-------");
 
-        System.out.println(new Carro("Ford").hashCode());
-        System.out.println(new Carro("Ford1").hashCode());
-        System.out.println("---------");
+        System.out.println("Método peek, exibi o último item da pilha: " + stackCarros.peek());
+        System.out.println("-------");
 
-        Carro carro1 = new Carro("Ford");
-        Carro carro2 = new Carro("Fiat");
-        System.out.println("carro 1 igual carro 2: " + carro1.equals(carro2));
-
+        System.out.println("Método empty, pilha está vazia? " + stackCarros.empty());
+        System.out.println("-------");
     }
 }
