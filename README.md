@@ -24,3 +24,8 @@ Lista duplamente encadeada: [classe nó duplo](https://github.com/thaisconto/Boo
 Lista circular: [classe nó](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/No.java), [métodos lista circular](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/ListaCircular.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
 
 Arvore Binaria: [classe nó binario](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/BinNo.java), [métodos arvore binaria](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/ArvoreBinaria.java), [classe objeto](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Obj.java), [objArvore](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/ObjArvore.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+## Principais implementações de estrutura de dados do Java
+HashCod e Equals: [classe carro](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+Stack(pilha): [classe carro](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
