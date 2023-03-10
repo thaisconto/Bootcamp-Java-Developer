@@ -1,54 +1,44 @@
-package map;
+package Desafios;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+/*
+O custo de um carro novo ao consumidor é a soma do custo de fábrica com a porcentagem do distribuidor
+e dos impostos (aplicados ao custo de fábrica).
+O gerente de uma loja de carros gostaria de um programa para calcular o preço de um carro
+novo para os clientes. Você receberá o custo de fábrica e as porcentagens referentes ao
+distribuidor e os impostos e deverá escrever programa para ler esses valores e imprimir
+o valor final do carro.
+Você recebera três valores inteiros que representam o custo de fábrica,
+as porcentagens do distribuidor e os impostos.
+Como saída, teremos o valor final do preço de um carro novo.
+ */
+
+import java.util.*;
 
 public class Main {
+    public static void main(String[] args) {
 
-    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        //entradas:
+        System.out.println("Informe o custo de fabricação: ");
+        int custoFabrica = scan.nextInt();
+        System.out.println("Informe a porcentagem do distribuidor: ");
+        int porcentagemDistribuidor = scan.nextInt();
+        System.out.println("Informe o percentual de impostos: ");
+        int PercentualImpostos = scan.nextInt();
 
+        int custoConsumidor;
+        int Distribuidor;
+        int ValorImpostos;
+        int carroNovo;
 
-        //um map
-        Map<String, String> aluno = new HashMap<>();
+        //porcentagens
+        Distribuidor = (custoFabrica * porcentagemDistribuidor) / 100;
+        ValorImpostos = (custoFabrica * PercentualImpostos) / 100;
 
-        //método put para adicionat itens
-        aluno.put("Nome", "João");
-        aluno.put("Idade", "17");
-        aluno.put("Media", "8.5");
-        aluno.put("Turma", "3a");
-
-        System.out.println("Dados do aluno: " + aluno);
-        System.out.println("------");
-
-        //key set: retorna todos os set que tenho para a classe aluno
-        System.out.println("Set's : " + aluno.keySet());
-        //values: retorna os valores de cada set
-        System.out.println("Valores: " + aluno.values());
-        System.out.println("------");
-
-        //lista de map
-        List<Map<String, String>> listaAlunos = new ArrayList<>();
-
-        listaAlunos.add(aluno);
+        //valor carro novo
+        carroNovo = custoFabrica + Distribuidor + ValorImpostos;
 
 
-        Map<String, String> aluno2 = new HashMap<>();
-
-        aluno2.put("Nome", "Maria");
-        aluno2.put("Idade", "18");
-        aluno2.put("Media", "8.9");
-        aluno2.put("Turma", "3b");
-
-        listaAlunos.add(aluno2);
-        System.out.println("Dados do aluno 2: " + aluno2);
-        System.out.println("------");
-
-        System.out.println("Lista de alunos: " + listaAlunos);
-        System.out.println("------");
-
-        //método containsKey: verifica se o map contem um set
-        System.out.println("Map contém set Nome? " + aluno.containsKey("Nome"));
+        System.out.println("Valor do carro novo para cliente deverá ser: " + carroNovo);
     }
 }
