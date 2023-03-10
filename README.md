@@ -31,3 +31,5 @@ HashCod e Equals: [classe carro](https://github.com/thaisconto/Bootcamp-Java-Dev
 Stack(pilha): [classe carro](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
 
 Queue(fila): [classe carro](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+ArrayList: [classe carro](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Carro.java) e [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
