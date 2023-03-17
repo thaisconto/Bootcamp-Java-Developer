@@ -1,44 +1,43 @@
-package Desafios;
+package Desafios.positivosMedia;
 
 /*
-O custo de um carro novo ao consumidor é a soma do custo de fábrica com a porcentagem do distribuidor
-e dos impostos (aplicados ao custo de fábrica).
-O gerente de uma loja de carros gostaria de um programa para calcular o preço de um carro
-novo para os clientes. Você receberá o custo de fábrica e as porcentagens referentes ao
-distribuidor e os impostos e deverá escrever programa para ler esses valores e imprimir
-o valor final do carro.
-Você recebera três valores inteiros que representam o custo de fábrica,
-as porcentagens do distribuidor e os impostos.
-Como saída, teremos o valor final do preço de um carro novo.
+Leia 6 valores. Em seguida, mostre quantos destes valores digitados foram positivos.
+Na próxima linha, deve-se mostrar a média de todos os valores positivos digitados,
+com um dígito após o ponto decimal.
+A entrada contém 6 números que podem ser valores inteiros ( int ) ou de ponto flutuante ( float ou double ).
+Pelo menos um destes números será positivo.
+O primeiro valor de saída é a quantidade de valores positivos.
+A próxima linha deve mostrar a média dos valores positivos digitados.
  */
 
-import java.util.*;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner scan = new Scanner(System.in);
-        //entradas:
-        System.out.println("Informe o custo de fabricação: ");
-        int custoFabrica = scan.nextInt();
-        System.out.println("Informe a porcentagem do distribuidor: ");
-        int porcentagemDistribuidor = scan.nextInt();
-        System.out.println("Informe o percentual de impostos: ");
-        int PercentualImpostos = scan.nextInt();
+        int contador = 0;
+        double mediaPositivos = 0;
+        int quantidadePositivos =0;
+        double numero =0;
+        double soma =0;
 
-        int custoConsumidor;
-        int Distribuidor;
-        int ValorImpostos;
-        int carroNovo;
+        do {
+            System.out.println("Digite um número: ");
+            numero = scan.nextDouble();
 
-        //porcentagens
-        Distribuidor = (custoFabrica * porcentagemDistribuidor) / 100;
-        ValorImpostos = (custoFabrica * PercentualImpostos) / 100;
+            if(numero>=0) {
+                quantidadePositivos++;
+                soma = soma + numero;}
 
-        //valor carro novo
-        carroNovo = custoFabrica + Distribuidor + ValorImpostos;
+            contador++;
 
+        }while (contador < 6);
 
-        System.out.println("Valor do carro novo para cliente deverá ser: " + carroNovo);
-    }
-}
+        System.out.println("Quantidade de números positivos: " + quantidadePositivos);
+
+        mediaPositivos = soma/quantidadePositivos;
+        System.out.println("A média é: " + String.format("%.1f", mediaPositivos));
+
+        }}
