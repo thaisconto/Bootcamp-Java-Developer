@@ -39,4 +39,12 @@ Set(HashSet): [classe carro(https://github.com/thaisconto/Bootcamp-Java-Develope
 Map(HashMap): [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
 
 ## Desafios de código
-Valor do carro novo: [Main](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+[Valor do carro novo](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+[Dragão](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+[Sequência Fibonacci](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+[H com N termos](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
+
+[Positivos e Média](https://github.com/thaisconto/Bootcamp-Java-Developer/blob/main/Main.java)
