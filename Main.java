@@ -1,57 +1,40 @@
-package Desafios.fibonacci;
+package Desafios.dragao;
 /*
-A seguinte sequência de números 0 1 1 2 3 5 8 13 21... é conhecida como série de Fibonacci.
-Nessa sequência, cada número, depois dos 2 primeiros, é igual à soma dos 2 anteriores.
-Escreva um algoritmo que leia um inteiro N (N < 46) e mostre os N primeiros números dessa série.
-O arquivo de entrada contém um valor inteiro N (0 < N < 46).
-Os valores devem ser mostrados na mesma linha, separados por um espaço em branco.
-Não deve haver espaço após o último valor.
+Daenerys é a khaleesi dos Dothraki. Juntamente com Drogon, eles vão atrás do Tyrion,
+para tentar dominar Westeros. Ela possui, além do seu dragãozinho, um rastreador que mede o nível
+de energia de qualquer ser vivo. Todos os seres com o nível menor ou igual a 8000,
+ela considera como se fosse um inseto. Quando passa deste valor, que foi o caso do Drogon,
+ela se espanta e grita “Mais de 8000”. Baseado nisso, utilize a mesma tecnologia e analise o
+nível de energia dos seres vivos.
+A primeira linha contém um número inteiro C relativo ao número de casos de teste.
+Em seguida, haverá C linhas, com um número inteiro N (100 <= N <= 100000) relativo ao nível
+de energia de um ser vivo.
+Para cada valor lido, imprima o texto correspondente.
  */
 
 import java.util.Scanner;
-import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args){
+
         Scanner scan = new Scanner(System.in);
-
-        int numero = 0;
+        int numeroDeCasos = 0;
         int contador = 1;
-        int fibonacci = 0;
+        int poderDeLuta = 0;
 
-        System.out.println("Digite um número: ");
-        numero = scan.nextInt();
+        System.out.println("Digite o número de casos: ");
+        numeroDeCasos = scan.nextInt();
 
-        System.out.println("Sequencia Fibonacci = ");
+        do{
+            System.out.println("Digite o poder de luta: ");
+            poderDeLuta = scan.nextInt();
 
-        if(numero<=2) {
-            do {
-                System.out.print(" " + fibonacci);
-                fibonacci++;
-                contador++;
-            } while (contador <= numero);
-        }
+            if(poderDeLuta>8000) System.out.println("Mais de 8000!");
+            else System.out.println("Inseto!");
 
-            else{
-                System.out.print(0 + " " + 1);
+            contador++;
 
-                contador = 2;
-                int atual = 1;
-                int proximo = 0;
-                int anterior = 1;
-
-                do {
-                        System.out.print(" " + atual);
-
-                        proximo = atual + anterior;
-                        anterior = atual;
-                        atual = proximo;
-
-                        contador++;
-
-                    }while(contador<numero);
-            }
-
-
+        }while(contador <= numeroDeCasos);
     }
 }
