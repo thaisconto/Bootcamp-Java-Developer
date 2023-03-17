@@ -1,43 +1,36 @@
-package Desafios.positivosMedia;
-
+package Desafios.HcomNtermos;
 /*
-Leia 6 valores. Em seguida, mostre quantos destes valores digitados foram positivos.
-Na próxima linha, deve-se mostrar a média de todos os valores positivos digitados,
-com um dígito após o ponto decimal.
-A entrada contém 6 números que podem ser valores inteiros ( int ) ou de ponto flutuante ( float ou double ).
-Pelo menos um destes números será positivo.
-O primeiro valor de saída é a quantidade de valores positivos.
-A próxima linha deve mostrar a média dos valores positivos digitados.
+Neste desafio, faça um programa que calcule o valor de H com N termos.
+Sendo, H = 1 + 1/2 + 1/3 + 1/4 + ... + 1/N.
+A entrada consiste em um número inteiro positivo.
+Na saída será impresso o valor que representa a soma dos termos.
  */
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] Args) {
 
         Scanner scan = new Scanner(System.in);
-        int contador = 0;
-        double mediaPositivos = 0;
-        int quantidadePositivos =0;
-        double numero =0;
-        double soma =0;
+
+        int numero = 0;
+        int contador = 1;
+        double H = 0.0;
+        double divisao = 0;
+
+        System.out.println("Digite um número: ");
+        numero = scan.nextInt();
 
         do {
-            System.out.println("Digite um número: ");
-            numero = scan.nextDouble();
-
-            if(numero>=0) {
-                quantidadePositivos++;
-                soma = soma + numero;}
+            divisao = 1.0/contador;
+            H = H + divisao;
 
             contador++;
 
-        }while (contador < 6);
+        }while(contador<=numero);
 
-        System.out.println("Quantidade de números positivos: " + quantidadePositivos);
+        System.out.println("Valor de H é: " + String.format("%.0f", H));
+    }
+}
 
-        mediaPositivos = soma/quantidadePositivos;
-        System.out.println("A média é: " + String.format("%.1f", mediaPositivos));
-
-        }}
