@@ -1,40 +1,63 @@
-package Desafios.dragao;
-/*
-Daenerys é a khaleesi dos Dothraki. Juntamente com Drogon, eles vão atrás do Tyrion,
-para tentar dominar Westeros. Ela possui, além do seu dragãozinho, um rastreador que mede o nível
-de energia de qualquer ser vivo. Todos os seres com o nível menor ou igual a 8000,
-ela considera como se fosse um inseto. Quando passa deste valor, que foi o caso do Drogon,
-ela se espanta e grita “Mais de 8000”. Baseado nisso, utilize a mesma tecnologia e analise o
-nível de energia dos seres vivos.
-A primeira linha contém um número inteiro C relativo ao número de casos de teste.
-Em seguida, haverá C linhas, com um número inteiro N (100 <= N <= 100000) relativo ao nível
-de energia de um ser vivo.
-Para cada valor lido, imprima o texto correspondente.
- */
+package Desafios.TaxaImpostoDeRenda;
 
+import java.io.IOException;
 import java.util.Scanner;
 
+/*
+Há um país denominado Lolipad, todos os habitantes ficam felizes em pagar seus impostos,
+pois sabem que nele não existem políticos corruptos e os recursos arrecadados são utilizados em
+benefício da população, sem qualquer desvio. A moeda deste país é o Loli, cujo símbolo é o R$.
+
+Você terá o desafio de ler um valor com duas casas decimais, equivalente ao salário de uma pessoa de Loli.
+Em seguida, calcule e mostre o valor que esta pessoa deve pagar de Imposto de Renda, segundo a tabela abaixo.
+abaixo de 2000 -> isento
+2000,01 - 3000 -> 8%
+3000,01 - 4500 -> 18%
+acima de 4500,01 -> 28%
+
+Lembre que, se o salário for R$ 3002.00, a taxa que incide é de 8% apenas sobre R$ 1000.00,
+pois a faixa de salário que fica de R$ 0.00 até R$ 2000.00 é isenta de Imposto de Renda.
+No exemplo fornecido (abaixo), a taxa é de 8% sobre R$ 1000.00 + 18% sobre R$ 2.00,
+o que resulta em R$ 80.36 no total.
+
+O valor deve ser impresso com duas casas decimais.
+ */
 public class Main {
-
-    public static void main(String[] args){
-
+    public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
-        int numeroDeCasos = 0;
-        int contador = 1;
-        int poderDeLuta = 0;
+        double renda = 0.00;
+        double imposto = 0.00;
+        double diferenca = 0;
+        System.out.println("Digite sua renda: ");
+        renda = scan.nextDouble();
 
-        System.out.println("Digite o número de casos: ");
-        numeroDeCasos = scan.nextInt();
+        if(renda <=2000.00){
+            imposto = 0;
+        }
 
-        do{
-            System.out.println("Digite o poder de luta: ");
-            poderDeLuta = scan.nextInt();
+        else if(renda >2000.01 & renda <= 3000.00){
+            diferenca = renda - 2000;
+            imposto = diferenca * 0.08;
+        }
 
-            if(poderDeLuta>8000) System.out.println("Mais de 8000!");
-            else System.out.println("Inseto!");
+        else if (renda >3000.01 & renda <= 4500.00) {
+            diferenca = renda - 3000;
+            imposto = (1000 * 0.08) + (diferenca * 0.18);
+        }
 
-            contador++;
+        else{
+            diferenca = renda - 4500;
+            imposto = (1000 * 0.08) + (1500 * 0.18) + (diferenca * 0.28);
 
-        }while(contador <= numeroDeCasos);
+        }
+
+        if(imposto == 0){
+            System.out.println("Você está isento do imposto de renda!");
+        }
+        else{
+            System.out.println("Você deve pagar R$" + String.format("%.2f",imposto) + " de imposto de renda!");
+        }
+
     }
 }
+
