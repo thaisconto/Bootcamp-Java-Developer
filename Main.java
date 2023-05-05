@@ -1,58 +1,58 @@
-package Desafios.Triangulo;
+package Desafios.QuitandaFrutas;
 
-import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 /*
-Leia 3 valores reais (A, B e C) e verifique se eles formam ou não um triângulo.
-Em caso positivo, calcule o perímetro do triângulo (soma de todos os lados) e apresente a mensagem: Perimetro = XX.X
-Em caso negativo, calcule a área do trapézio que tem A e B como base e C como altura,
-mostrando a mensagem: Area = XX.X
-Fórmula da área de um trapézio: AREA = ((A + B) x C) / 2
-O resultado deve ser apresentado com uma casa decimal.
+Seu Zé está vendendo frutas com a seguinte tabela de preços:
+Morango: R$ 2,50/Kg (até 5kg), R$ 2,20/Kg (acima de 5kg)
+Maçã: R$ 1,80/Kg (até 5kg), R$ 1,50/Kg (acima de 5kg)
+
+Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra ultrapassar R$ 25,00,
+receberá ainda um desconto de 10% sobre este total.
+Escreva um algoritmo para ler a quantidade (em Kg) de morangos e a quantidade (em Kg) de maças
+adquiridas e escreva o valor a ser pago pelo cliente.
+
+Como entrada, você recebera a quantidade em kg de morangos e a quantidade em kg de maçãs.
+A saída será o valor a ser pago pelo cliente, conforme a tabela de preços da quintanda do seu Zé.
  */
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+
         Scanner scan = new Scanner(System.in);
+        int morangos = 0;
+        int macas = 0;
+        double valorMorango = 0;
+        double valorMaca = 0;
+        double precoTotal = 0;
 
-        System.out.println("Digite 3 valores reais:");
-        double A = scan.nextDouble();
-        double B = scan.nextDouble();
-        double C = scan.nextDouble();
+        System.out.println("Quantos quilos de morango deseja comprar?");
+        morangos = scan.nextInt();
 
-        if (A >= B & A >=C){ //A é o maior
-            if(B + C > A){ //é um triangulo
-                double perimetro = A+B+C;
-                System.out.println("O perímetro do triângulo é " + String.format("%.1f",perimetro));
-            }else{
-                double areaTrapezio = ((A + B) * C) / 2;
-                System.out.println("Área do trapézio é " + String.format("%.1f",areaTrapezio));
-            }
+        System.out.println("Quantos quilos de maçã deseja comprar?");
+        macas = scan.nextInt();
+
+        if(morangos<=5){
+            valorMorango = morangos * 2.5;
+        } else{
+            valorMorango = morangos * 2.2;
         }
 
-        if (B >= C & B >=A){ //B é o maior
-            if(A + C > B){ //é um triangulo
-                double perimetro = A+B+C;
-                System.out.println("O perímetro do triângulo é " + String.format("%.1f",perimetro));
-            }else{
-                double areaTrapezio = ((A + B) * C) / 2;
-                System.out.println("Área do trapézio é " + String.format("%.1f",areaTrapezio));
-            }
+        if(macas<=5){
+            valorMaca = macas * 1.8;
+        } else{
+            valorMaca = macas * 1.5;
         }
 
-        if (C >= B & C >=A){ //C é o maior
-            if(B + C > C){ //é um triangulo
-                double perimetro = A+B+C;
-                System.out.println("O perímetro do triângulo é " + String.format("%.1f",perimetro));
-            }else{
-                double areaTrapezio = ((A + B) * C) / 2;
-                System.out.println("Área do trapézio é " + String.format("%.1f",areaTrapezio));
-            }
-        }
-/* como limitar casa decimal:
-// %.2f - pega o argumento e imprime com 2 casas depois da vírgula.
-   %n - passa para a próxima linha (equivalente ao println()).
-*/
+        precoTotal = valorMorango + valorMaca;
 
-}}
+        if (morangos+macas >=8 || precoTotal > 25){
+            precoTotal = precoTotal * 0.9;
+        }
+
+        System.out.println("Preço morango: " + valorMorango);
+        System.out.println("Preço maçã: " + valorMaca);
+        System.out.println("Preço total: " + precoTotal);
+    }
+
+}
+
