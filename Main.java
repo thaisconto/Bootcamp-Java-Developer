@@ -1,63 +1,68 @@
-package Desafios.TaxaImpostoDeRenda;
+package Desafios.EspacosEVogais;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 /*
-Há um país denominado Lolipad, todos os habitantes ficam felizes em pagar seus impostos,
-pois sabem que nele não existem políticos corruptos e os recursos arrecadados são utilizados em
-benefício da população, sem qualquer desvio. A moeda deste país é o Loli, cujo símbolo é o R$.
+Jorginho é professor do primário de uma determinada escola. Ele tem 100.000 alunos e precisa criar
+um programa que verifica quantos espaços em branco e quantas vogais existem em uma determinada string
+de entrada que os alunos entregaram na avaliação final. Ajude-o a realizar essa tarefa antes que o
+tempo para entrega-la no fim do semestre acabe!
 
-Você terá o desafio de ler um valor com duas casas decimais, equivalente ao salário de uma pessoa de Loli.
-Em seguida, calcule e mostre o valor que esta pessoa deve pagar de Imposto de Renda, segundo a tabela abaixo.
-abaixo de 2000 -> isento
-2000,01 - 3000 -> 8%
-3000,01 - 4500 -> 18%
-acima de 4500,01 -> 28%
-
-Lembre que, se o salário for R$ 3002.00, a taxa que incide é de 8% apenas sobre R$ 1000.00,
-pois a faixa de salário que fica de R$ 0.00 até R$ 2000.00 é isenta de Imposto de Renda.
-No exemplo fornecido (abaixo), a taxa é de 8% sobre R$ 1000.00 + 18% sobre R$ 2.00,
-o que resulta em R$ 80.36 no total.
-
-O valor deve ser impresso com duas casas decimais.
+ A entrada será uma frase no formato de string
+ A saída deverá retornar quantos espaços em branco e quantas vogais existem na
+ determinada string, conforme exemplo abaixo:
+"Esse desafio foi facil" - Espacos em branco: 3   Vogais: 10
+ “Navegar nas aguas do teu mar” - Espacos em branco: 5 Vogais: 11
  */
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        double renda = 0.00;
-        double imposto = 0.00;
-        double diferenca = 0;
-        System.out.println("Digite sua renda: ");
-        renda = scan.nextDouble();
 
-        if(renda <=2000.00){
-            imposto = 0;
+        System.out.println("Digite uma frase: ");
+        String frase = scan.nextLine();
+
+        //split separa a sting em palavras com regex
+        String[] fraseSplit = frase.split(" ");
+
+        //criando uma char com as vogais
+        char[] Vogais = {'a', 'e', 'i', 'o', 'u'};
+
+        //como a fraseSplit está separada em palavras, o espço em branco será palavras -1
+        int espacosEmBranco = fraseSplit.length - 1, quantVogais = 0;
+
+        //percorrendo a string em cada item -> palavra
+        for (String item : fraseSplit) {
+            //adicionando um contado i com length (número de cacateres dentro da string)
+            for (int i = 0; i < item.length(); i++){
+                //charAt retorna o caractere da posição i
+                char c = item.charAt(i);
+                //converter o item c em minusculo, para comprar com as vogais contidas na char
+                char cMinusculo = Character.toLowerCase(c);
+                //usando método contem (criado abaixo) para percorrer char vogal
+                if (contem(Vogais, cMinusculo))
+                    quantVogais++;
+            }
         }
 
-        else if(renda >2000.01 & renda <= 3000.00){
-            diferenca = renda - 2000;
-            imposto = diferenca * 0.08;
+        System.out.println("Espacos em branco: " + espacosEmBranco + " Vogais: " + quantVogais);
+    }
+
+    //criando método contém: uma comparação dentro da char vogais
+
+    //vetor: é a minha char vogais, comparação é o meu item caractere c na posição i
+        private static boolean contem (char vetor[], char comparacao){
+
+        boolean flag = false;
+
+        //percorrer meu vetor vogais e retornar true se a comparação for positiva
+        for (int i = 0; i < vetor.length; i++){
+            if (vetor[i] == comparacao)
+                flag = true;
         }
 
-        else if (renda >3000.01 & renda <= 4500.00) {
-            diferenca = renda - 3000;
-            imposto = (1000 * 0.08) + (diferenca * 0.18);
-        }
+        return flag;
 
-        else{
-            diferenca = renda - 4500;
-            imposto = (1000 * 0.08) + (1500 * 0.18) + (diferenca * 0.28);
-
-        }
-
-        if(imposto == 0){
-            System.out.println("Você está isento do imposto de renda!");
-        }
-        else{
-            System.out.println("Você deve pagar R$" + String.format("%.2f",imposto) + " de imposto de renda!");
-        }
 
     }
-}
 
+}
